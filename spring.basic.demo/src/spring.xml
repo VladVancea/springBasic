@@ -3,20 +3,25 @@
 
 <beans>
     <bean id="triangle" class="spring.basic.demo.shapes.Triangle">
-        <property name="pointA" ref="Point1"/>
-        <property name="pointB" ref="Point2"/>
-        <property name="pointC" ref="Point3"/>
+        <property name="pointA" ref="zeroPoint"/>
+        <property name="pointB">
+            <bean class="spring.basic.demo.shapes.Point">
+                <property name="x" value="-20"/>
+                <property name="y" value="0"/>
+            </bean>
+        </property>
+        <property name="pointC">
+            <bean class="spring.basic.demo.shapes.Point">
+                <property name="x" value="20"/>
+                <property name="y" value="0"/>
+            </bean>
+        </property>
     </bean>
-    <bean id="Point1" class="spring.basic.demo.shapes.Point">
+
+    <bean id="zeroPoint" class="spring.basic.demo.shapes.Point">
         <property name="x" value="0"/>
         <property name="y" value="0"/>
     </bean>
-    <bean id="Point2" class="spring.basic.demo.shapes.Point">
-        <property name="x" value="-20"/>
-        <property name="y" value="0"/>
-    </bean>
-    <bean id="Point3" class="spring.basic.demo.shapes.Point">
-        <property name="x" value="20"/>
-        <property name="y" value="0"/>
-    </bean>
+
+    <alias name="triangle" alias="triangle-alias"/>
 </beans>
