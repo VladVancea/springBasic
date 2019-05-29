@@ -3,8 +3,20 @@
 
 <beans>
     <bean id="triangle" class="spring.basic.demo.shapes.Triangle">
-<!--        <property name="type" value="Equilateral" />-->
-        <constructor-arg index="0" type="java.lang.String" value="equilateral" />
-        <constructor-arg index="1" type="int" value="20" />
+        <property name="pointA" ref="Point1"/>
+        <property name="pointB" ref="Point2"/>
+        <property name="pointC" ref="Point3"/>
+    </bean>
+    <bean id="Point1" class="spring.basic.demo.shapes.Point">
+        <property name="x" value="0"/>
+        <property name="y" value="0"/>
+    </bean>
+    <bean id="Point2" class="spring.basic.demo.shapes.Point">
+        <property name="x" value="-20"/>
+        <property name="y" value="0"/>
+    </bean>
+    <bean id="Point3" class="spring.basic.demo.shapes.Point">
+        <property name="x" value="20"/>
+        <property name="y" value="0"/>
     </bean>
 </beans>

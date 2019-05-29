@@ -1,28 +1,37 @@
 package spring.basic.demo.shapes;
 
 public class Triangle {
+    private Point pointA;
+    private Point pointB;
+    private Point pointC;
 
-    private String type;
-    private int height;
-
-    public String getType() {
-        return type;
+    public Point getPointA() {
+        return pointA;
     }
 
-    public int getHeight() {
-        return height;
+    public void setPointA(Point pointA) {
+        this.pointA = pointA;
     }
 
-    public Triangle(String type) {
-        this.type = type;
+    public Point getPointB() {
+        return pointB;
     }
 
-    public Triangle(String type, int height) {
-        this.type = type;
-        this.height = height;
+    public void setPointB(Point pointB) {
+        this.pointB = pointB;
+    }
+
+    public Point getPointC() {
+        return pointC;
+    }
+
+    public void setPointC(Point pointC) {
+        this.pointC = pointC;
     }
 
     public void draw() {
-        System.out.println("Drawn " + getType() + " triangle of height " + getHeight());
+        System.out.println("(" + pointA.getX() + "," + pointA.getY() + ")");
+        System.out.println("(" + pointB.getX() + "," + pointB.getY() + ")");
+        System.out.println("(" + pointC.getX() + "," + pointC.getY() + ")");
     }
 }
